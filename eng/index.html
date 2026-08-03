@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Palacete · Hondarribia, Basque Country</title>
+  <meta name="description" content="Small hotel in the old town of Hondarribia, on Gipuzkoa square. Nine rooms, free Wi-Fi and parking, 2 km from San Sebastián Airport.">
+
+  <link rel="canonical" href="https://hotelpalacete.net/en/">
+  <link rel="alternate" hreflang="es" href="https://hotelpalacete.net/">
+  <link rel="alternate" hreflang="eu" href="https://hotelpalacete.net/eus/">
+  <link rel="alternate" hreflang="en" href="https://hotelpalacete.net/eng/">
+  <link rel="alternate" hreflang="fr" href="https://hotelpalacete.net/fr/">
+  <link rel="alternate" hreflang="x-default" href="https://hotelpalacete.net/">
+
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       CABECERA
+       Transparente sobre la foto del hero. Al hacer scroll toma fondo
+       de piedra (lo controla main.js con la clase .con-fondo).
+       =================================================================== -->
+  <header class="cabecera">
+    <div class="cabecera__interior contenedor">
+
+      <!-- Logo, enmarcado como una placa -->
+      <a href="eng\index.html" class="logo">
+        <span class="logo__placa">
+          <img src="../fotos/logo-hotel-palacete-2.jpg" alt="Hotel Palacete, Hondarribia">
+        </span>
+      </a>
+
+      <!-- Menú de navegación e idiomas -->
+      <nav class="menu" id="menu">
+        <ul class="menu__lista">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="eng\habitaciones.html">Rooms</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Facilities</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+
+        <!-- Idiomas. Los enlaces se completarán cuando existan las versiones -->
+        <div class="idiomas">
+        <a href="../index.html">ESP</a>
+        <a href="../eus/index.html">EUS</a>
+        <a href="index.html" class="activo">ENG</a>
+        <a href="../fr/index.html">FR</a>
+      </div>
+      </nav>
+
+      <!-- Botón de reserva y botón de menú -->
+      <div class="cabecera__acciones">
+        <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
+        <a href="#" class="boton-reservar">Book now</a>
+
+        <button class="boton-menu" id="botonMenu" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================================================================
+       HERO
+       Foto a pantalla completa con el texto apoyado abajo.
+       PARA CAMBIAR LA FOTO: sustituir el archivo fotos/hero.jpg por
+       otro con el mismo nombre. No hay que tocar el código.
+       =================================================================== -->
+  <section class="hero">
+    <div class="hero__contenido">
+
+      <p class="etiqueta">Hondarribia · Old town</p>
+
+      <h1 class="hero__titulo">
+        A house with <em>centuries</em> of history, right on the square
+      </h1>
+
+      <p class="hero__texto">
+        Cozy rooms within the city walls, a short walk from the port and the beach. 
+        Perfect for a romantic evening with your partner, where you can also
+        enjoy the coast to the fullest, or try activities like a day of birdwatching. 
+      </p>
+
+      <div class="hero__botones">
+        <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
+        <a href="#" class="boton-principal">Check availability</a>
+        <a href="#" class="boton-secundario">See our rooms</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Línea almenada: reproduce el remate de la torre del logo.
+       Marca el paso de la foto al contenido. -->
+  <div class="divisor-almenas"></div>
+
+  <!-- ===================================================================
+       PRESENTACIÓN
+       Texto sobre el hotel y distancias a los puntos de interés.
+       =================================================================== -->
+  <section class="presentacion">
+    <div class="contenedor presentacion__interior">
+
+      <div>
+        <p class="etiqueta">The hotel</p>
+
+        <h2 class="presentacion__titulo">Inside the historic walls, in Plaza de Armas.</h2>
+
+        <p class="presentacion__texto">
+          Hotel Palacete is located in the old town of Hondarribia.
+          Step outside and you are already on the cobbled streets, minutes
+          from the bars of La Marina and the harbour.
+        </p>
+
+        <p class="presentacion__texto">
+          Hondarribia has one of the best preserved old towns on the Basque
+          coast, with a seafaring atmosphere best enjoyed on an unhurried
+          walk.
+        </p>
+      </div>
+
+      <!-- Distancias, en formato de lista con línea de puntos -->
+      <ul class="distancias">
+        <li class="distancia">
+          <span class="distancia__texto">San Sebastián Airport</span>
+          <span class="distancia__puntos" aria-hidden="true"></span>
+          <span class="distancia__cifra">2 km</span>
+        </li>
+        <li class="distancia">
+          <span class="distancia__texto">Irún and the French border</span>
+          <span class="distancia__puntos" aria-hidden="true"></span>
+          <span class="distancia__cifra">6 km</span>
+        </li>
+        <li class="distancia">
+          <span class="distancia__texto">San Sebastián</span>
+          <span class="distancia__puntos" aria-hidden="true"></span>
+          <span class="distancia__cifra">22 km</span>
+        </li>
+        <li class="distancia">
+          <span class="distancia__texto">Walk to the harbour</span>
+          <span class="distancia__puntos" aria-hidden="true"></span>
+          <span class="distancia__cifra">5 min</span>
+        </li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ===================================================================
+       SERVICIOS
+       Cuatro puntos fuertes. Iconos SVG escritos aquí mismo: no cargan
+       ningún archivo ni librería externa.
+       =================================================================== -->
+  <section class="servicios">
+    <div class="contenedor">
+      <ul class="servicios__lista">
+
+        <li class="servicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M2 8.5a16 16 0 0 1 20 0"/>
+            <path d="M5 12a11.5 11.5 0 0 1 14 0"/>
+            <path d="M8.5 15.5a6.5 6.5 0 0 1 7 0"/>
+            <circle cx="12" cy="19" r="0.6" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>Free Wi-Fi</span>
+        </li>
+
+        <li class="servicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3"/>
+            <path d="M9.5 17V7.5h3a2.75 2.75 0 0 1 0 5.5h-3"/>
+          </svg>
+          <span>Free parking</span>
+        </li>
+
+        <li class="servicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 12v9"/>
+            <path d="M3 12h18a9 9 0 0 0-18 0Z"/>
+            <path d="M8.5 21h7"/>
+          </svg>
+          <span>Sunny terrace</span>
+        </li>
+
+        <li class="servicio">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 21V8l4-3 4 3 4-3 4 3v13"/>
+            <path d="M9.5 21v-4.5h5V21"/>
+          </svg>
+          <span>In the old town</span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       HABITACIONES
+       Nueve habitaciones repartidas en cuatro tipos. Los nombres se
+       mantienen igual que en la web actual para no perder el
+       posicionamiento que ya tienen en Google.
+       =================================================================== -->
+  <section class="habitaciones" id="habitaciones">
+    <div class="contenedor">
+
+      <div class="habitaciones__intro">
+        <p class="etiqueta">Rooms</p>
+        <h2 class="habitaciones__titulo">Our rooms inside the old walls</h2>
+        <p class="habitaciones__texto">
+          Rooms have a desk, chair, private bathroom, heating, hairdryer,
+          flat-screen television, telephone and Wi-Fi.
+        </p>
+      </div>
+
+      <ul class="habitaciones__lista">
+
+        <li class="habitacion">
+          <a href="../habitaciones.html#individual" class="habitacion__foto">
+            <img src="../fotos/individual-nueva-03.jpg" alt="Single room at Hotel Palacete">
+          </a>
+          <div class="habitacion__cuerpo">
+            <h3 class="habitacion__nombre">Single room</h3>
+            <p class="habitacion__descripcion">
+              For one guest, with everything the hotel offers.
+            </p>
+            <p class="habitacion__dato">1 guest</p>
+            <!-- PENDIENTE: enlazar la página propia de la habitación.
+                 Conservar el slug: /habitaciones/habitacion-individual/ -->
+            <a href="#" class="habitacion__enlace">View room</a>
+          </div>
+        </li>
+
+        <li class="habitacion">
+          <a href="../habitaciones.html#doble-vistas" class="habitacion__foto">
+            <img src="../fotos/doble-vistas-02.jpg" alt="Double room with views over Gipuzkoa square">
+          </a>
+          <div class="habitacion__cuerpo">
+            <h3 class="habitacion__nombre">Double room with views</h3>
+            <p class="habitacion__descripcion">
+              Overlooking the old town. The most requested rooms in the hotel.
+            </p>
+            <p class="habitacion__dato">2 guests</p>
+            <!-- PENDIENTE. Slug: /habitaciones/habitacion-doble-con-vistas/ -->
+            <a href="#" class="habitacion__enlace">View room</a>
+          </div>
+        </li>
+
+        <li class="habitacion">
+          <a href="../habitaciones.html#doble" class="habitacion__foto">
+            <img src="../fotos/doble-02-matri.jpg" alt="Double room at Hotel Palacete">
+          </a>
+          <div class="habitacion__cuerpo">
+            <h3 class="habitacion__nombre">Double room</h3>
+            <p class="habitacion__descripcion">
+              With a double bed or two single beds, subject to availability.
+            </p>
+            <p class="habitacion__dato">2 guests</p>
+            <!-- PENDIENTE. Slug: /habitaciones/habitacion-doble/ -->
+            <a href="#" class="habitacion__enlace">View room</a>
+          </div>
+        </li>
+
+        <li class="habitacion">
+          <a href="../habitaciones.html#triple" class="habitacion__foto">
+            <img src="../fotos/triple-03.jpg" alt="Triple room at Hotel Palacete">
+          </a>
+          <div class="habitacion__cuerpo">
+            <h3 class="habitacion__nombre">Triple room</h3>
+            <p class="habitacion__descripcion">
+              One double bed and one single bed. Ideal for families.
+            </p>
+            <p class="habitacion__dato">3 guests</p>
+            <!-- PENDIENTE. Slug: /habitaciones/habitacion-triple/ -->
+            <a href="#" class="habitacion__enlace">View room</a>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+  </section>
+
+
+
+  <!-- ===================================================================
+       UBICACIÓN
+       Dirección, cómo llegar y mapa incrustado de Google.
+       =================================================================== -->
+  <section class="ubicacion" id="ubicacion">
+    <div class="contenedor ubicacion__interior">
+
+      <div>
+        <p class="etiqueta">Where we are</p>
+
+        <h2 class="ubicacion__titulo">On Gipuzkoa square</h2>
+
+        <p class="ubicacion__texto">
+          In the heart of the old town, a five minute walk from the La Marina
+          district and the harbour. Two kilometres from San Sebastián Airport
+          and six from the French border.
+        </p>
+
+        <address class="ubicacion__direccion">
+          Plaza de Gipuzkoa, 5<br>
+          20280 Hondarribia (Gipuzkoa)
+        </address>
+
+        <a href="tel:+34943640813" class="ubicacion__telefono">943 64 08 13</a>
+      </div>
+
+      <!-- Mapa de Google.
+           loading="lazy" hace que solo se cargue cuando el visitante
+           llega hasta aquí, en vez de al abrir la página. -->
+      <div class="mapa">
+        <iframe
+          src="https://www.google.com/maps?q=Hotel+Palacete,+Plaza+de+Gipuzkoa+5,+20280+Hondarribia&output=embed"
+          title="Map showing the location of Hotel Palacete in Hondarribia"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen></iframe>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA
+       Datos de contacto reales del hotel, navegación y avisos legales.
+       =================================================================== -->
+  <footer class="pie">
+    <div class="contenedor">
+
+      <div class="pie__bloques">
+
+        <!-- Contacto -->
+        <div>
+          <p class="pie__titulo">Hotel Palacete</p>
+          <address>
+            Plaza de Gipuzkoa, 5<br>
+            20280 Hondarribia (Gipuzkoa)<br>
+            <a href="mailto:info@hotelpalacete.net">info@hotelpalacete.net</a>
+          </address>
+          <!-- El enlace tel: permite llamar con un toque desde el móvil -->
+          <a href="tel:+34943640813" class="pie__telefono">943 64 08 13</a>
+
+          <ul class="pie__redes" style="margin-top:18px">
+            <li>
+              <a href="https://www.instagram.com/hotelpalacete/" target="_blank" rel="noopener" aria-label="Instagram del Hotel Palacete">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/hotelpalacete/" target="_blank" rel="noopener" aria-label="Facebook del Hotel Palacete">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.5 8.5h2.5V5h-2.5a4 4 0 0 0-4 4v2H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9.5a1 1 0 0 1 .5-1Z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Navegación -->
+        <div>
+          <p class="pie__titulo">The hotel</p>
+          <ul class="pie__lista">
+            <li><a href="#">Rooms</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Facilities</a></li>
+            <li><a href="">Contact</a></li>
+            <!-- PENDIENTE: enlazar el reglamento de mascotas (PDF) -->
+            <li><a href="#">Pet policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Reserva directa y redes -->
+        <div>
+          <p class="pie__titulo">Booking</p>
+          <p class="pie__directa">
+            <strong>Book on our website</strong><br>
+            Best rate and best conditions, guaranteed.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="pie__base">
+        <ul class="pie__legal">
+          <!-- PENDIENTE: no existe aviso legal. Es obligatorio por la LSSI.
+               Comentado con el hotel para que lo pidan a su gestoría. -->
+          <li><a href="#">Legal notice</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Cookie policy</a></li>
+        </ul>
+        <p class="pie__copy">© 2026 Hotel Palacete</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="../main.js"></script>
+</body>
+</html>

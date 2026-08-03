@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habitaciones · Hotel Palacete, Hondarribia</title>
+
+  <link rel="canonical" href="https://hotelpalacete.net/habitaciones.html">
+  <link rel="alternate" hreflang="es" href="https://hotelpalacete.net/habitaciones.html">
+  <link rel="alternate" hreflang="eu" href="https://hotelpalacete.net/eus/habitaciones.html">
+  <link rel="alternate" hreflang="en" href="https://hotelpalacete.net/eng/habitaciones.html">
+  <link rel="alternate" hreflang="fr" href="https://hotelpalacete.net/fr/habitaciones.html">
+  <link rel="alternate" hreflang="x-default" href="https://hotelpalacete.net/habitaciones.html">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ===================================================================
+       CABECERA
+       =================================================================== -->
+  <header class="cabecera">
+    <div class="cabecera__interior contenedor">
+
+      <!-- Logo, enmarcado como una placa -->
+      <a href="index.html" class="logo">
+        <span class="logo__placa">
+          <img src="fotos/logo-hotel-palacete-2.jpg" alt="Hotel Palacete, Hondarribia">
+        </span>
+      </a>
+
+      <!-- Menú de navegación e idiomas -->
+      <nav class="menu" id="menu">
+        <ul class="menu__lista">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="habitaciones.html" aria-current="page">Habitaciones</a></li>
+          <li><a href="#">Galería</a></li>
+          <li><a href="#">Servicios</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <!-- Idiomas. Los enlaces se completarán cuando existan las versiones -->
+        <div class="idiomas">
+          <a href="habitaciones.html" class="activo">ESP</a>
+          <a href="eus/habitaciones.html">EUS</a>
+          <a href="eng/habitaciones.html">ENG</a>
+          <a href="fr/habitaciones.html">FR</a>
+        </div>
+      </nav>
+
+      <!-- Botón de reserva y botón de menú -->
+      <div class="cabecera__acciones">
+        <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
+        <a href="#" class="boton-reservar">Reservar</a>
+
+        <button class="boton-menu" id="botonMenu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ===================================================================
+       INTRO DE LA PÁGINA
+       =================================================================== -->
+  <section class="pagina-intro">
+    <div class="contenedor">
+      <p class="etiqueta">Habitaciones</p>
+      <h1 class="pagina-intro__titulo">Nuestras habitaciones dentro de la muralla</h1>
+      <p class="pagina-intro__texto">
+        Habitaciones distintas entre si.
+        Cuentan con baño completo, escritorio, calefacción, secador de
+        pelo, televisión, teléfono y wifi.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       CATEGORÍAS
+       Cada categoría agrupa las habitaciones reales que existen de ese
+       tipo. No se indica el número de habitación a propósito: la reserva
+       se hace por categoría, no por habitación concreta.
+       =================================================================== -->
+
+  <!-- ---------- Individuales ---------- -->
+  <section class="categoria" id="individual">
+    <div class="contenedor">
+      <div class="categoria__cabecera">
+        <h2 class="categoria__titulo">Individuales</h2>
+        <p class="categoria__dato">1 persona</p>
+        <a href="#" class="categoria__reservar">Ver fechas y precios</a>
+      </div>
+      <p class="categoria__texto">
+        Dos habitaciones para una persona, de estilos distintos. Ambas con
+        cama individual y baño completo.
+      </p>
+
+        <article class="estancia" id="individual-reformada">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Reformada</h3>
+            <p class="estancia__texto">La más nueva del hotel. Suelo de madera clara, cabecero tapizado y luz indirecta sobre la cama. Tiene aire acondicionado, además de calefacción.</p>
+            <ul class="estancia__datos">
+            <li>Cama individual</li>
+            <li>Baño con ducha</li>
+            <li>Aire acondicionado</li>
+            <li>Escritorio y silla</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/individual-nueva-01.jpg" alt="Habitación individual reformada del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-nueva-03.jpg" alt="Habitación individual reformada del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-nueva-06.jpg" alt="Habitación individual reformada del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-nueva-05.jpg" alt="Habitación individual reformada del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-nueva-07.jpg" alt="Habitación individual reformada del Hotel Palacete" loading="lazy">
+          </div>
+        </article>
+
+
+        <article class="estancia" id="individual-clasica">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Con encanto clásico</h3>
+            <p class="estancia__texto">De aire más tradicional, con vigas de madera a la vista y ventana a las calles del casco antiguo.</p>
+            <ul class="estancia__datos">
+            <li>Cama individual</li>
+            <li>Baño con ducha</li>
+            <li>Calefacción</li>
+            <li>Escritorio y silla</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/individual-01.jpg" alt="Habitación individual clásica del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-02.jpg" alt="Habitación individual clásica del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-03.jpg" alt="Habitación individual clásica del Hotel Palacete" loading="lazy">
+          <img src="fotos/individual-04.jpg" alt="Habitación individual clásica del Hotel Palacete" loading="lazy">
+          </div>
+        </article>
+
+
+    </div>
+  </section>
+
+  <!-- ---------- Dobles ---------- -->
+  <section class="categoria" id="doble">
+    <div class="contenedor">
+      <div class="categoria__cabecera">
+        <h2 class="categoria__titulo">Dobles</h2>
+        <p class="categoria__dato">2 personas</p>
+        <a href="#" class="categoria__reservar">Ver fechas y precios</a>
+      </div>
+      <p class="categoria__texto">
+        Tres habitaciones para dos personas. Al reservar se puede indicar la
+        preferencia de cama, sujeta a disponibilidad.
+      </p>
+
+        <article class="estancia" id="doble-matrimonio">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Con cama de matrimonio</h3>
+            <p class="estancia__texto">Habitación con vigas de madera a la vista y ventana al casco antiguo. Con mesa y sillas junto a la ventana.</p>
+            <ul class="estancia__datos">
+            <li>Cama de matrimonio</li>
+            <li>Baño con ducha</li>
+            <li>Calefacción</li>
+            <li>Escritorio y silla</li>
+            <li>Escritorio</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/doble-02-matri.jpg" alt="Habitación doble con cama de matrimonio" loading="lazy">
+          <img src="fotos/doble-01-matri.jpg" alt="Habitación doble con cama de matrimonio" loading="lazy">
+          <img src="fotos/doble-03-matri.jpg" alt="Habitación doble con cama de matrimonio" loading="lazy">
+          <img src="fotos/doble-04-matri.jpg" alt="Habitación doble con cama de matrimonio" loading="lazy">
+          </div>
+        </article>
+
+
+        <article class="estancia" id="doble-dos-camas">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Con dos camas individuales</h3>
+            <p class="estancia__texto">Dos habitaciones equivalentes, con dos camas separadas. Buena opción para quien viaja acompañado sin compartir cama.</p>
+            <ul class="estancia__datos">
+            <li>Dos camas individuales</li>
+            <li>Baño con ducha</li>
+            <li>Calefacción</li>
+            <li>Aire acondicionado</li>
+            <li>Escritorio</li>
+            <li>Escritorio y silla</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/doble-05.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-06.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-07.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-08.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-09.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-10.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          <img src="fotos/doble-11.jpg" alt="Habitación doble con dos camas individuales" loading="lazy">
+          </div>
+        </article>
+
+    </div>
+  </section>
+
+  <!-- ---------- Dobles con vistas ---------- -->
+  <section class="categoria" id="doble-vistas">
+    <div class="contenedor">
+      <div class="categoria__cabecera">
+        <h2 class="categoria__titulo">Dobles con vistas</h2>
+        <p class="categoria__dato">2 personas</p>
+        <a href="#" class="categoria__reservar">Ver fechas y precios</a>
+      </div>
+      <p class="categoria__texto">
+        Las más solicitadas del hotel. Dos habitaciones asomadas al casco
+        antiguo, con más luz que el resto.
+      </p>
+
+        <article class="estancia" id="vistas-plaza">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Con vistas a la plaza</h3>
+            <p class="estancia__texto">Ventanas que dan directamente a la plaza de Gipuzkoa, el corazón del casco histórico.</p>
+            <ul class="estancia__datos">
+            <li>Cama de matrimonio</li>
+            <li>Vistas a la plaza</li>
+            <li>Aire acondicionado</li>
+            <li>Escritorio</li>
+            <li>Baño con ducha</li>
+            <li>Calefacción</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/doble-vistas-01.jpg" alt="Habitación doble con vistas a la plaza de Gipuzkoa" loading="lazy">
+          <img src="fotos/doble-vistas-02.jpg" alt="Habitación doble con vistas a la plaza de Gipuzkoa" loading="lazy">
+          <img src="fotos/doble-vistas-03.jpg" alt="Habitación doble con vistas a la plaza de Gipuzkoa" loading="lazy">
+          <img src="fotos/doble-vistas-04.jpg" alt="Habitación doble con vistas a la plaza de Gipuzkoa" loading="lazy">
+          <img src="fotos/doble-vistas-05.jpg" alt="Habitación doble con vistas a la plaza de Gipuzkoa" loading="lazy">
+          </div>
+        </article>
+
+
+        <article class="estancia" id="vistas-parte-vieja">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Con vistas a la parte vieja</h3>
+            <p class="estancia__texto">Asomada a las calles empedradas del casco antiguo, con vistas a los tejados y las fachadas de piedra.</p>
+            <ul class="estancia__datos">
+            <li>Cama de matrimonio</li>
+            <li>Aire acondicionado</li>
+            <li>Escritorio</li>
+            <li>Vistas a la parte vieja</li>
+            <li>Baño con ducha</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/doble-vistas-06.jpg" alt="Habitación doble con vistas a la parte vieja de Hondarribia" loading="lazy">
+          <img src="fotos/doble-vistas-07.jpg" alt="Habitación doble con vistas a la parte vieja de Hondarribia" loading="lazy">
+          <img src="fotos/doble-vistas-08.jpg" alt="Habitación doble con vistas a la parte vieja de Hondarribia" loading="lazy">
+          <img src="fotos/doble-vistas-09.jpg" alt="Habitación doble con vistas a la parte vieja de Hondarribia" loading="lazy">
+          </div>
+        </article>
+
+    </div>
+  </section>
+
+  <!-- ---------- Triple ---------- -->
+  <section class="categoria" id="triple">
+    <div class="contenedor">
+      <div class="categoria__cabecera">
+        <h2 class="categoria__titulo">Triple</h2>
+        <p class="categoria__dato">3 personas</p>
+        <a href="#" class="categoria__reservar">Ver fechas y precios</a>
+      </div>
+      <p class="categoria__texto">
+        La más amplia del hotel, con veinte metros cuadrados. Pensada para
+        familias o para tres personas que viajan juntas.
+      </p>
+
+        <article class="estancia" id="triple-familiar">
+          <div class="estancia__info">
+            <h3 class="estancia__nombre">Triple familiar</h3>
+            <p class="estancia__texto">Una cama de matrimonio y una individual, con espacio suficiente para moverse con equipaje.</p>
+            <ul class="estancia__datos">
+            <li>Cama de matrimonio y cama individual</li>
+            <li>Baño con ducha</li>
+            <li>Calefacción</li>
+            <li>Aire acondicionado</li>
+            <li>Escritorio</li>
+            </ul>
+          </div>
+
+          <div class="estancia__fotos">
+          <img src="fotos/triple-01.jpg" alt="Habitación triple del Hotel Palacete" loading="lazy">
+          <img src="fotos/triple-02.jpg" alt="Habitación triple del Hotel Palacete" loading="lazy">
+          <img src="fotos/triple-03.jpg" alt="Habitación triple del Hotel Palacete" loading="lazy">
+          <img src="fotos/triple-04.jpg" alt="Habitación triple del Hotel Palacete" loading="lazy">
+          <img src="fotos/triple-05.jpg" alt="Habitación triple del Hotel Palacete" loading="lazy">
+          </div>
+        </article>
+
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       LLAMADA A LA RESERVA
+       =================================================================== -->
+  <section class="cierre-reserva">
+    <div class="contenedor">
+      <h2 class="cierre-reserva__titulo">¿Reservamos?</h2>
+      <p class="cierre-reserva__texto">
+        Consulta disponibilidad y precios para tus fechas.
+      </p>
+      <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
+      <a href="#" class="boton-principal">Ver disponibilidad</a>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       PIE DE PÁGINA
+       Datos de contacto reales del hotel, navegación y avisos legales.
+       =================================================================== -->
+  <footer class="pie">
+    <div class="contenedor">
+
+      <div class="pie__bloques">
+
+        <!-- Contacto -->
+        <div>
+          <p class="pie__titulo">Hotel Palacete</p>
+          <address>
+            Plaza de Gipuzkoa, 5<br>
+            20280 Hondarribia (Gipuzkoa)<br>
+            <a href="mailto:info@hotelpalacete.net">info@hotelpalacete.net</a>
+          </address>
+          <!-- El enlace tel: permite llamar con un toque desde el móvil -->
+          <a href="tel:+34943640813" class="pie__telefono">943 64 08 13</a>
+        </div>
+
+        <!-- Navegación -->
+        <div>
+          <p class="pie__titulo">El hotel</p>
+          <ul class="pie__lista">
+            <li><a href="habitaciones.html">Habitaciones</a></li>
+            <li><a href="#">Galería</a></li>
+            <li><a href="#">Servicios</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Reserva directa y redes -->
+        <div>
+          <p class="pie__titulo">Reserva</p>
+          <p class="pie__directa">
+            <strong>Reserva en nuestra web</strong><br>
+            Al mejor precio y con las mejores condiciones.
+          </p>
+          <ul class="pie__redes" style="margin-top:18px">
+            <li>
+              <a href="https://www.instagram.com/hotelpalacete/" target="_blank" rel="noopener" aria-label="Instagram del Hotel Palacete">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/hotelpalacete/" target="_blank" rel="noopener" aria-label="Facebook del Hotel Palacete">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.5 8.5h2.5V5h-2.5a4 4 0 0 0-4 4v2H8v3.5h2.5V21H14v-6.5h2.5L17 11h-3V9.5a1 1 0 0 1 .5-1Z"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pie__base">
+        <ul class="pie__legal">
+          <!-- PENDIENTE: no existe aviso legal. Es obligatorio por la LSSI.
+               Comentado con el hotel para que lo pidan a su gestoría. -->
+          <li><a href="#">Aviso legal</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Política de cookies</a></li>
+        </ul>
+        <p class="pie__copy">© 2026 Hotel Palacete</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

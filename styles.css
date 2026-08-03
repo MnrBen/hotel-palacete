@@ -1,0 +1,1503 @@
+/* =======================================================================
+   HOTEL PALACETE — HOJA DE ESTILOS
+   =======================================================================
+   Organización de este archivo:
+     1. Tipografías
+     2. Variables globales (colores, tipografías, medidas)
+     3. Reglas base
+     4. Elemento decorativo: línea "almenada"
+     5. Cabecera
+     6. Hero (foto de fondo)
+     7. Presentación
+     8. Adaptación a pantallas grandes (mobile first: esto va al final)
+   ======================================================================= */
+
+/* -----------------------------------------------------------------------
+   1. TIPOGRAFÍAS
+   · Fraunces      → títulos. Serif con carácter; su cursiva enlaza con
+                     la del propio logo del hotel.
+   · Inter         → texto general, muy legible en pantalla.
+   · IBM Plex Mono → etiquetas pequeñas y datos (distancias, idiomas).
+   ----------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+/* -----------------------------------------------------------------------
+   2. VARIABLES GLOBALES
+   Paleta tomada del propio casco histórico de Hondarribia: piedra
+   cálida, el verde de las contraventanas típicas, y un terracota de
+   teja reservado a detalles muy puntuales.
+   ----------------------------------------------------------------------- */
+:root {
+  /* --- Colores --- */
+  --tinta:        #1B2A22;  /* Texto principal. Verde-negro, no negro puro */
+  --tinta-suave:  #5B6B60;  /* Texto secundario */
+  --piedra:       #F6F1E6;  /* Fondo principal, piedra cálida */
+  --piedra-osc:   #ECE4D2;  /* Fondo alterno, para separar secciones */
+  --verde:        #2F6B52;  /* Acento principal: verde contraventana */
+  --verde-oscuro: #21503D;  /* Verde más oscuro, para hover */
+  --terracota:    #A85332;  /* Acento secundario, uso muy puntual */
+  --linea:        #DBD0B8;  /* Bordes y separadores, tono cálido */
+  --blanco:       #FFFFFF;
+
+  /* Crema para el texto sobre la foto del hero.
+     Se usa crema en vez de blanco puro: sobre una foto cálida el
+     blanco puro resulta duro y desentona con el resto de la web. */
+  --crema:        #F3EEE2;
+  --crema-suave:  #D6CDBA;
+
+  /* --- Tipografías --- */
+  --tipo-titulos: 'Fraunces', serif;
+  --tipo-texto:   'Inter', sans-serif;
+  --tipo-dato:    'IBM Plex Mono', monospace;
+
+  /* --- Medidas --- */
+  --ancho-maximo:  1180px;
+  --alto-cabecera:   68px;
+}
+
+/* -----------------------------------------------------------------------
+   3. REGLAS BASE
+   ----------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--tipo-texto);
+  color: var(--tinta);
+  background: var(--piedra);
+  line-height: 1.6;
+  padding-top: var(--alto-cabecera);
+}
+
+h1, h2, h3 {
+  font-family: var(--tipo-titulos);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Contenedor central: limita el ancho y centra el contenido.
+   Se reutiliza en todas las secciones. */
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Foco visible al navegar con teclado (accesibilidad) */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--verde);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* Etiqueta pequeña en mayúsculas, usada como entradilla de sección */
+.etiqueta {
+  font-family: var(--tipo-dato);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verde);
+}
+
+/* -----------------------------------------------------------------------
+   5. CABECERA
+   Fondo de piedra sólido desde el primer momento, para que el menú
+   sea siempre legible sin depender de la foto que haya detrás.
+   ----------------------------------------------------------------------- */
+.cabecera {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--alto-cabecera);
+  z-index: 100;
+  background: var(--piedra);
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera__interior {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* --- Logo, enmarcado como una placa ---
+   El archivo del logo es un JPG con fondo blanco. Enmarcarlo en una
+   placa resuelve ese fondo y además evoca las placas de piedra con
+   el nombre que llevan las casas del casco antiguo.
+   PENDIENTE: pedir el logo en PNG con fondo transparente o en SVG. */
+.logo {
+  display: inline-flex;
+}
+
+.logo__placa {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px;
+  width: auto;
+}
+
+/* --- Zona derecha: botón Reservar + menú --- */
+.cabecera__acciones {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Botón Reservar ---
+   Acción principal de la web. Siempre visible, también en móvil y
+   con el menú desplegable cerrado. */
+.boton-reservar {
+  background: var(--verde);
+  color: var(--crema);
+  font-family: var(--tipo-texto);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 9px 16px;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.boton-reservar:hover {
+  background: var(--verde-oscuro);
+}
+
+/* --- Botón de menú (tres rayas), solo visible en móvil --- */
+.boton-menu {
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.boton-menu span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--tinta);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.boton-menu[aria-expanded="true"] span { background: var(--tinta); }
+.boton-menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.boton-menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.boton-menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* --- Menú desplegable (móvil) --- */
+.menu {
+  position: fixed;
+  top: var(--alto-cabecera);
+  left: 0;
+  width: 100%;
+  background: var(--piedra);
+  border-bottom: 1px solid var(--linea);
+  padding: 8px 0 20px;
+  display: none;
+}
+
+.menu.abierto {
+  display: block;
+}
+
+.menu__lista {
+  list-style: none;
+}
+
+.menu__lista a {
+  display: block;
+  padding: 13px 20px;
+  font-size: 1rem;
+  color: var(--tinta);
+  border-bottom: 1px solid var(--linea);
+}
+
+.menu__lista a:hover {
+  color: var(--verde);
+}
+
+/* --- Selector de idioma --- */
+.idiomas {
+  display: flex;
+  gap: 8px;
+  padding: 16px 20px 0;
+}
+
+.idiomas a {
+  font-family: var(--tipo-dato);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--tinta-suave);
+  padding: 4px 8px;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.idiomas a:hover,
+.idiomas a.activo {
+  color: var(--verde);
+  border-color: var(--verde);
+}
+
+/* =======================================================================
+   6. HERO — foto a pantalla completa
+   =======================================================================
+   PARA CAMBIAR LAS FOTOS: sustituir fotos/hero-movil-2.jpg (móvil) y
+   fotos/hero-escritorio.jpg (escritorio, en el @media del final),
+   manteniendo los mismos nombres. No hace falta tocar el código.
+   Conviene que sea una foto horizontal y de buena resolución (mínimo
+   1600 px de ancho), con espacio despejado en la parte baja, que es
+   donde se apoya el texto.
+   ======================================================================= */
+.hero {
+  position: relative;
+  min-height:  calc(100vh - var(--alto-cabecera));
+  background-image: url('fotos/hero-movil-2.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Velo oscuro sobre la foto.
+   Sin él, el texto puede volverse ilegible según la imagen. El velo
+   es verdoso y cálido, en línea con la paleta, no un gris neutro. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Velo neutro, sin tinte de color: oscurece solo lo justo para que
+     el texto se lea, sin alterar los tonos de la foto. Concentrado en
+     la parte baja, que es donde se apoya el titular. */
+  background: linear-gradient(to top,
+              rgba(0, 0, 0, 0.75) 0%,
+              rgba(0, 0, 0, 0.55) 25%,
+              rgba(0, 0, 0, 0.15) 55%,
+              rgba(0, 0, 0, 0.05) 100%);
+}
+
+.hero__contenido {
+  position: relative;
+  z-index: 2;              /* Por encima del velo */
+  width: 100%;
+  max-width: var(--ancho-maximo);
+  margin: 0 auto;
+  padding: 0 20px 56px;
+  color: var(--crema);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* La entradilla del hero va sobre foto: se aclara para que contraste */
+.hero .etiqueta {
+  display: block;
+  color: #9CC4AF;
+  margin-bottom: 16px;
+}
+
+.hero__titulo {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.08;
+  margin-bottom: 18px;
+  max-width: 14em;
+}
+
+/* La palabra clave del titular, en cursiva, como el logo del hotel */
+.hero__titulo em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero__texto {
+  font-size: 1.05rem;
+  color: var(--crema-suave);
+  max-width: 30rem;
+  margin-bottom: 28px;
+}
+
+.hero__botones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 22px;
+}
+
+.boton-principal {
+  background: var(--verde);
+  color: var(--crema);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 3px;
+  transition: background 0.2s ease;
+}
+
+.boton-principal:hover {
+  background: var(--verde-oscuro);
+}
+
+/* Botón secundario: enlace subrayado, no una segunda caja.
+   Dos botones-caja del mismo peso restarían fuerza a la acción
+   principal, que es reservar. */
+
+.boton-secundario {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--crema);
+  border-bottom: 1px solid rgba(243, 238, 226, 0.6);
+  padding-bottom: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.boton-secundario:hover {
+  border-bottom-color: var(--crema);
+}
+
+/* -----------------------------------------------------------------------
+   7. PRESENTACIÓN
+   Texto sobre el hotel y distancias en formato de "línea de puntos",
+   recurso tomado de los paneles informativos y las cartas de hotel.
+   ----------------------------------------------------------------------- */
+.presentacion {
+  background: var(--piedra-osc);
+  padding: 56px 0 64px;
+}
+
+.presentacion__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 14px 0 20px;
+  max-width: 22rem;
+}
+
+.presentacion__texto {
+  color: var(--tinta-suave);
+  font-size: 1rem;
+  max-width: 34rem;
+  margin-bottom: 14px;
+}
+
+/* --- Lista de distancias ---
+   Etiqueta a la izquierda, puntos de guía, dato a la derecha. */
+.distancias {
+  margin-top: 32px;
+  border-top: 3px solid var(--linea);
+  list-style: none;
+}
+
+.distancia {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 13px 0;
+  border-bottom: 3px solid var(--linea);
+}
+
+.distancia__texto {
+  font-size: 0.92rem;
+  color: var(--tinta);
+  white-space: nowrap;
+}
+
+/* La línea de puntos que rellena el hueco entre etiqueta y dato */
+.distancia__puntos {
+  flex: 1;
+  border-bottom: 4px dotted var(--linea);
+  height: 0;
+  transform: translateY(-4px);
+}
+
+.distancia__cifra {
+  font-family: var(--tipo-dato);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--verde);
+  white-space: nowrap;
+}
+
+/*BOTONES DE SECCION CÓMO LLEGAR Y HORARIOS EN INDEX -------
+-------Enlace al detalle completo EN CONTACTO, en la versión resumida de la portada */
+.llegar__mas {
+  margin-top: 28px;
+}
+
+.llegar__mas a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--verde);
+  border-bottom: 1px solid var(--verde);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.llegar__mas a:hover {
+  color: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+
+/* -----------------------------------------------------------------------
+   VISOR DE FOTOS (carrusel a pantalla completa)
+   El HTML lo genera main.js; aquí solo se define su aspecto.
+   ----------------------------------------------------------------------- */
+
+/* Con el visor abierto, la página de fondo se queda quieta.
+   El position:fixed es lo que lo consigue también en móvil, donde
+   overflow:hidden por sí solo no basta. */
+body.sin-scroll {
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.visor {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(12, 20, 16, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visor[hidden] {
+  display: none;
+}
+
+/* --- Pista: una foto por pantalla, con anclaje al deslizar --- */
+.visor__pista {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;            /* Firefox */
+}
+
+.visor__pista::-webkit-scrollbar {
+  display: none;                    /* Chrome y Safari */
+}
+
+.visor__hueco {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px 72px;
+}
+
+.visor__hueco img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;              /* la foto entera, sin recortar */
+  border-radius: 2px;
+}
+
+/* --- Botón de cerrar --- */
+.visor__cerrar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.visor__cerrar:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.visor__cerrar svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--crema);
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+}
+
+/* --- Flechas ---
+   Ocultas en móvil: ahí se pasa de foto deslizando el dedo. */
+.visor__flecha {
+  display: none;
+}
+
+/* --- Contador --- */
+.visor__contador {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--tipo-dato);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--crema-suave);
+  pointer-events: none;             /* no estorba al pulsar para cerrar */
+}
+
+/* -----------------------------------------------------------------------
+   PIE DE PÁGINA
+   Fondo oscuro para marcar el final de la página.
+   ----------------------------------------------------------------------- */
+.pie {
+  background: var(--tinta);
+  color: var(--crema-suave);
+  padding: 52px 0 0;
+}
+
+.pie a { color: var(--crema-suave); transition: color 0.2s ease; }
+.pie a:hover { color: var(--crema); }
+
+.pie__bloques { display: grid; gap: 40px; }
+
+.pie__titulo {
+  font-family: var(--tipo-dato);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8FB3A0;
+  margin-bottom: 16px;
+}
+
+.pie__lista { list-style: none; }
+.pie__lista li { margin-bottom: 9px; }
+
+/* El navegador pone la dirección en cursiva por defecto: se anula */
+.pie address { font-style: normal; line-height: 1.7; }
+
+/* El teléfono destaca: en un hotel pequeño entran muchas reservas
+   por llamada, sobre todo desde el móvil. */
+.pie__telefono {
+  font-family: var(--tipo-dato);
+  font-size: 1.05rem;
+  color: var(--crema);
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.pie__directa {
+  background: rgba(255,255,255,0.06);
+  border-left: 2px solid var(--verde);
+  padding: 14px 16px;
+  border-radius: 2px;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.pie__directa strong { color: var(--crema); font-weight: 600; }
+
+.pie__base {
+  margin-top: 44px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 20px 0 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 0.82rem;
+}
+
+.pie__legal { display: flex; flex-wrap: wrap; gap: 8px 18px; list-style: none; }
+.pie__copy { color: #7E9080; }
+
+/* -----------------------------------------------------------------------
+   SERVICIOS
+   Cuatro puntos fuertes con icono. Sin bordes ni fondo propio: el
+   bloque respira dentro de la página en lugar de cortarla en franjas.
+   ----------------------------------------------------------------------- */
+.servicios {
+  background: var(--piedra);
+  padding: 48px 0 4px;
+}
+
+.servicios__lista {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);   /* móvil: dos y dos */
+  gap: 26px 18px;
+}
+
+.servicio {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.servicio svg {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  stroke: var(--verde);
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.servicio span {
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+
+/* -----------------------------------------------------------------------
+   HABITACIONES
+   Cuatro tarjetas: foto arriba, contenido debajo.
+   ----------------------------------------------------------------------- */
+.habitaciones {
+  background: var(--piedra);
+  padding: 56px 0 64px;
+}
+
+.habitaciones__intro { margin-bottom: 36px; }
+
+.habitaciones__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 14px 0 16px;
+  max-width: 22rem;
+}
+
+.habitaciones__texto {
+  color: var(--tinta-suave);
+  font-size: 1rem;
+  max-width: 36rem;
+}
+
+.habitaciones__lista {
+  list-style: none;
+  display: grid;
+  gap: 32px;
+}
+
+.habitacion { display: flex; flex-direction: column; }
+
+/* Sección HABITACIONES: la foto es un enlace que envuelve una <img>.
+   Se usa <img> y no fondo CSS porque son contenido: así llevan alt y
+   posicionan en Google Imágenes. */
+.habitacion__foto {
+  display: block;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.habitacion__foto img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;      /* recorta sin deformar */
+}
+
+.habitacion__foto:hover {
+  opacity: 0.925;
+}
+
+.habitacion__cuerpo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.habitacion__nombre {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.habitacion__descripcion {
+  color: var(--tinta-suave);
+  font-size: 0.98rem;
+  margin-bottom: 12px;
+}
+
+/* Capacidad. En la tipografía de datos, igual que las distancias. */
+.habitacion__dato {
+  font-family: var(--tipo-dato);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--verde);
+  padding: 4px 9px;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.habitacion__enlace {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--tinta);
+  border-bottom: 1px solid var(--tinta);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.habitacion__enlace:hover {
+  color: var(--verde);
+  border-color: var(--verde);
+}
+
+/* -----------------------------------------------------------------------
+   PÁGINA DE HABITACIONES
+   Solo se usa en habitaciones.html. Reutiliza las variables y los
+   componentes generales (contenedor, etiqueta, botones).
+   ----------------------------------------------------------------------- */
+
+/* --- Intro de la página --- */
+.pagina-intro {
+  background: var(--piedra-osc);
+  padding: 120px 0 48px;   /* deja hueco a la cabecera fija */
+}
+
+.pagina-intro__titulo {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin: 14px 0 20px;
+  max-width: 22rem;
+}
+
+.pagina-intro__texto {
+  color: var(--tinta-suave);
+  max-width: 34rem;
+}
+
+/* --- Cada categoría de habitación --- */
+.categoria {
+  padding: 40px 0;
+}
+
+/* Se alterna el fondo para separar una categoría de otra */
+.categoria:nth-child(even) {
+  background: var(--piedra-osc);
+}
+
+.categoria__cabecera {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--linea);
+  padding-top: 22px;
+  margin-bottom: 14px;
+}
+
+.categoria__titulo {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.categoria__dato {
+  font-family: var(--tipo-dato);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--verde);
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  padding: 3px 8px;
+}
+
+.categoria__texto {
+  color: var(--tinta-suave);
+  max-width: 34rem;
+  margin-bottom: 30px;
+}
+
+/* --- Cada habitación concreta dentro de su categoría --- */
+.estancia {
+  margin-bottom: 44px;
+}
+
+.estancia__nombre {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.estancia__texto {
+  color: var(--tinta-suave);
+  font-size: 0.98rem;
+  margin-bottom: 14px;
+  max-width: 34rem;
+}
+
+/* Características, separadas por puntos verdes */
+.estancia__datos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 20px;
+}
+
+.estancia__datos li {
+  font-family: var(--tipo-dato);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.estancia__datos li:not(:last-child)::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--verde);
+}
+
+/* --- Rejilla de fotos ---
+   Aquí sí se usan etiquetas <img>: son contenido de la página y así
+   posicionan en Google Imágenes. loading="lazy" evita cargarlas todas
+   de golpe, que con 35 fotos penalizaría mucho. */
+.estancia__fotos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.estancia__fotos img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;      /* recorta sin deformar */
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+}
+
+/* --- Cierre con llamada a la reserva --- */
+.cierre-reserva {
+  background: var(--piedra);
+  border-top: 1px solid var(--linea);
+  padding: 56px 0 64px;
+  text-align: center;
+}
+
+.cierre-reserva__titulo {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+.cierre-reserva__texto {
+  color: var(--tinta-suave);
+  margin-bottom: 26px;
+}
+
+/* ESTILOS BOTON RESERVA PARA CADA CATEGORIA EN HABITACIONES */
+
+/* Enlace de reserva dentro de la cabecera de categoría.
+   El margin-left:auto lo empuja al extremo derecho de la línea. */
+.categoria__reservar {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--verde);
+  border-bottom: 1px solid var(--verde);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.categoria__reservar:hover {
+  color: var(--verde-oscuro);
+  border-color: var(--verde-oscuro);
+}
+
+/* -----------------------------------------------------------------------
+   UBICACIÓN
+   ----------------------------------------------------------------------- */
+.ubicacion {
+  background: var(--piedra);
+  padding: 56px 0 64px;
+}
+
+.ubicacion__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 14px 0 20px;
+  max-width: 20rem;
+}
+
+.ubicacion__texto {
+  color: var(--tinta-suave);
+  margin-bottom: 20px;
+  max-width: 32rem;
+}
+
+.ubicacion__direccion {
+  font-style: normal;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.ubicacion__telefono {
+  font-family: var(--tipo-dato);
+  font-size: 1.05rem;
+  color: var(--verde);
+  border-bottom: 1px solid var(--verde);
+  padding-bottom: 2px;
+}
+
+/* Aparcamiento: la duda más habitual en un hotel de casco histórico */
+.ubicacion__aparcamiento {
+  color: var(--tinta-suave);
+  font-size: 0.98rem;
+  max-width: 32rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--linea);
+}
+
+/* Marco del mapa. El iframe se estira hasta llenarlo. */
+.mapa {
+  margin-top: 32px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--piedra);
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* -----------------------------------------------------------------------
+   PÁGINA DE CONTACTO
+   Reutiliza .pagina-intro y la lista de puntos de las distancias.
+   ----------------------------------------------------------------------- */
+.contacto {
+  background: var(--piedra);
+  padding: 48px 0;
+}
+
+.contacto__interior {
+  display: grid;
+  gap: 34px;
+}
+
+.contacto__etiqueta {
+  font-family: var(--tipo-dato);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--verde);
+  margin-bottom: 10px;
+}
+
+/* Teléfono y email, en grande: son la vía de contacto real */
+.contacto__destacado {
+  font-family: var(--tipo-titulos);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--tinta);
+  border-bottom: 1px solid var(--linea);
+  padding-bottom: 3px;
+  display: inline-block;
+  word-break: break-word;    /* el email no desborda en móvil */
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contacto__destacado:hover {
+  color: var(--verde);
+  border-color: var(--verde);
+}
+
+.contacto__nota {
+  font-size: 0.9rem;
+  color: var(--tinta-suave);
+  margin-top: 10px;
+}
+
+.contacto__direccion {
+  font-style: normal;
+  line-height: 1.7;
+  font-size: 1.05rem;
+}
+
+.contacto__red {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--verde);
+  border-bottom: 1px solid var(--verde);
+  padding-bottom: 2px;
+}
+
+/* --- Horarios --- */
+.horarios {
+  background: var(--piedra-osc);
+  padding: 48px 0 56px;
+}
+
+.horarios__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 14px 0 24px;
+}
+
+.horarios__aviso {
+  margin-top: 24px;
+  font-size: 0.95rem;
+  color: var(--tinta-suave);
+  max-width: 34rem;
+}
+
+/* --- Cómo llegar --- */
+.llegar {
+  background: var(--piedra-osc);
+  padding: 48px 0 56px;
+}
+
+.llegar__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin: 14px 0 30px;
+}
+
+.llegar__bloques {
+  display: grid;
+  gap: 28px;
+}
+
+.llegar__nombre {
+  font-size: 1.15rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.llegar__texto {
+  color: var(--tinta-suave);
+  font-size: 0.98rem;
+  max-width: 32rem;
+}
+
+/* Iconos de redes sociales. SVG en línea: sin archivos ni librerías. */
+.pie__redes {
+  list-style: none;
+  display: flex;
+  gap: 14px;
+}
+
+.pie__redes a {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  transition: border-color 0.2s ease;
+}
+
+.pie__redes a:hover {
+  border-color: var(--crema);
+}
+
+.pie__redes svg {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+
+
+/* !!!! MEDIA QUERIES !!!! */
+
+
+/* -----------------------------------------------------------------------
+   8. ADAPTACIÓN A PANTALLAS GRANDES
+   Mobile first: aquí solo se reordena y agranda lo ya construido.
+   A partir de 900px (tablet horizontal y ordenador).
+   ----------------------------------------------------------------------- */
+
+
+@media (min-width: 900px) {
+
+  :root {
+    --alto-cabecera: 88px;
+  }
+
+  .boton-menu {
+    display: none;
+  }
+
+  /* El menú deja de ser desplegable y pasa a la cabecera, en horizontal */
+  .menu {
+    position: static;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 30px;
+  }
+
+  .menu__lista {
+    display: flex;
+    gap: 28px;
+  }
+
+  .menu__lista a {
+    padding: 0;
+    border: none;
+    font-size: 0.94rem;
+    color: var(--tinta);
+    position: relative;
+    transition: color 0.2s ease;
+  }
+
+  .menu__lista a:hover {
+    color: var(--verde);
+  }
+
+  /* Subrayado fino que se despliega al pasar el ratón */
+  .menu__lista a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+
+  .menu__lista a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .idiomas {
+    padding: 0;
+  }
+
+  /* En escritorio solo cambia el espaciado; los colores son los
+     mismos que en móvil, definidos más arriba. */
+
+  .logo img {
+    height: 40px;
+  }
+
+  .logo__placa {
+    padding: 7px 14px;
+  }
+
+  .boton-reservar {
+    font-size: 0.9rem;
+    padding: 11px 22px;
+  }
+
+  /* --- Hero en pantalla grande --- */
+
+  /* En pantalla grande se cambia a la foto horizontal. Es dirección de
+     arte responsive: no solo se escala la imagen, se sirve un encuadre
+     distinto según el dispositivo. */
+  .hero {
+    background-image: url('fotos/hero-escritorio.jpg');
+  }
+
+  .hero__contenido {
+    padding-bottom: 92px;
+  }
+
+  .hero__titulo {
+    font-size: 3.8rem;
+    max-width: 11em;
+  }
+
+  .hero__texto {
+    font-size: 1.12rem;
+  }
+
+  /* --- Presentación en pantalla grande: dos columnas --- */
+  .presentacion {
+    padding: 96px 0;
+  }
+
+  .presentacion__interior {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .presentacion__titulo {
+    font-size: 2.3rem;
+    max-width: 25rem;
+  }
+
+  .distancias {
+    margin-top: 0;
+  }
+
+  .distancia {
+    padding: 19px 0;
+    gap: 14px;
+  }
+
+  .distancia__texto,
+  .distancia__cifra {
+    font-size: 1.05rem;
+  }
+
+  /* --- Habitaciones en pantalla grande: dos columnas --- */
+  .habitaciones { padding: 96px 0; }
+  .habitaciones__intro { margin-bottom: 52px; }
+
+  .habitaciones__titulo {
+    font-size: 2.3rem;
+    max-width: 25rem;
+  }
+
+  .habitaciones__lista {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 40px;
+  }
+
+  .habitacion__nombre { font-size: 1.5rem; }
+
+  /* --- Pie en pantalla grande: tres columnas --- */
+  .pie { padding-top: 72px; }
+
+  .pie__bloques {
+    grid-template-columns: 1.3fr 1fr 1.2fr;
+    gap: 60px;
+  }
+
+  .pie__base {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+  /* --- Ubicación: datos y mapa en paralelo --- */
+  .ubicacion { padding: 96px 0; }
+
+  .ubicacion__interior {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .ubicacion__titulo { font-size: 2.3rem; }
+
+  .mapa {
+    margin-top: 0;
+    aspect-ratio: 3 / 2;
+  }
+
+  /* --- Servicios en pantalla grande: los cuatro en fila --- */
+  .servicios {
+    padding: 72px 0 8px;
+  }
+
+  .servicios__lista {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
+  }
+  
+
+  /* --- Página de habitaciones en pantalla grande --- */
+  .pagina-intro {
+    padding: 100px 0 64px;
+  }
+
+  .pagina-intro__titulo {
+    font-size: 3rem;
+    max-width: 30rem;
+  }
+
+  .categoria {
+    padding: 64px 0;
+  }
+
+  .categoria__titulo {
+    font-size: 2.4rem;
+  }
+
+  /* Texto a la izquierda, fotos a la derecha */
+  .estancia {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 64px;
+  }
+
+  .estancia__nombre {
+    font-size: 1.5rem;
+  }
+
+  .estancia__fotos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cierre-reserva {
+    padding: 88px 0 96px;
+  }
+
+  .cierre-reserva__titulo {
+    font-size: 2.4rem;
+  }
+
+  /* --- Visor en pantalla grande: aparecen las flechas --- */
+  .visor__flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 52px;
+    height: 52px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, opacity 0.2s ease;
+  }
+
+  .visor__flecha:hover {
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  /* En la primera y la última foto, la flecha correspondiente se apaga */
+  .visor__flecha:disabled {
+    opacity: 0.25;
+    cursor: default;
+  }
+
+  .visor__flecha svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--crema);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .visor__flecha--anterior  { left: 24px; }
+  .visor__flecha--siguiente { right: 24px; }
+
+  .visor__hueco {
+    padding: 72px 96px 80px;
+  }
+
+  /*ESTILOS BOTON RESERVA HABITACIONES EN PANTALLA GRANDE - La foto grande invita a pulsarla */
+  .estancia__fotos img {
+    cursor: zoom-in;
+    transition: opacity 0.2s ease;
+  }
+
+  .estancia__fotos img:hover {
+    opacity: 0.85;
+  }
+
+  .categoria__reservar {
+    margin-left: auto;
+  }
+
+  /* --- Página de contacto en pantalla grande --- */
+  .contacto {
+    padding: 50px 0;
+  }
+
+  .contacto__interior {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+  }
+
+  .contacto__destacado {
+    font-size: 1.7rem;
+  }
+
+  .horarios {
+    padding: 72px 0 88px;
+  }
+
+  .horarios__titulo,
+  .llegar__titulo {
+    font-size: 2.3rem;
+  }
+
+  .llegar {
+    padding: 72px 0 88px;
+  }
+
+  .llegar__bloques {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 56px;
+  }
+}
