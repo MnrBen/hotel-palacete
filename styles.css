@@ -1161,6 +1161,68 @@ body.sin-scroll {
   stroke-linejoin: round;
 }
 
+/* --- Botones de filtro --- */
+.galeria__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+
+/* -----------------------------------------------------------------------
+   GALERÍA
+   Rejilla propia (a diferencia de .estancia__fotos, que va emparejada
+   con texto). Solo fotos, a ancho completo. Reutiliza .estancia__fotos
+   como segunda clase para que main.js la trate como grupo de visor,
+   sin tocar el JS.
+   ----------------------------------------------------------------------- */
+
+
+   .galeria__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.galeria__grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.galeria__filtro {
+  font-family: var(--tipo-dato);
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--tinta-suave);
+  background: none;
+  border: 1px solid var(--linea);
+  border-radius: 20px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.galeria__filtro:hover {
+  border-color: var(--verde);
+  color: var(--verde);
+}
+
+.galeria__filtro.activo {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: var(--crema);
+}
+
+.galeria__grid img[hidden] {
+  display: none;
+}
+
 
 
 
@@ -1499,5 +1561,10 @@ body.sin-scroll {
   .llegar__bloques {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 56px;
+  }
+
+  .galeria__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 }

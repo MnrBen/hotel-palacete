@@ -134,16 +134,28 @@ menu.querySelectorAll('a').forEach(enlace => {
     btnSig.disabled = (indice === total - 1);
   }
 
-  /* --- Al pulsar una foto, se abre su grupo --- */
+  /* --- Al pulsar una foto, se abre su grupo ---
+     Se calculan las fotos visibles en el momento del clic, no al
+     cargar la página. Así, si hay un filtro activo (como en la
+     galería), el visor solo recorre las fotos de esa categoría en
+     vez de saltar a otras que están ocultas. */
   grupos.forEach(grupo => {
-    const fotos = Array.from(grupo.querySelectorAll('img'));
-    fotos.forEach((img, i) => {
+    const imagenes = Array.from(grupo.querySelectorAll('img'));
+
+    imagenes.forEach(img => {
       img.tabIndex = 0;                       // accesible con teclado
-      img.addEventListener('click', () => abrir(fotos, i, img));
+
+      const abrirDesdeAqui = () => {
+        const visibles = imagenes.filter(i => !i.hidden);
+        const indice = visibles.indexOf(img);
+        abrir(visibles, indice, img);
+      };
+
+      img.addEventListener('click', abrirDesdeAqui);
       img.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          abrir(fotos, i, img);
+          abrirDesdeAqui();
         }
       });
     });
@@ -175,5 +187,36 @@ menu.querySelectorAll('a').forEach(enlace => {
       actualizar();
     }, 80);
   }, { passive: true });
+
+})();
+
+/* =======================================================================
+   FILTROS DE LA GALERÍA
+   =======================================================================
+   Cada foto lleva un atributo data-categoria en el HTML. Al pulsar un
+   botón, se muestran solo las fotos de esa categoría (o todas, con el
+   botón "Todas"). No hace falta tocar el visor: sigue funcionando
+   igual, porque solo se oculta con CSS, las fotos siguen en el DOM.
+   ======================================================================= */
+(function () {
+
+  const botones = document.querySelectorAll('.galeria__filtro');
+  if (!botones.length) return;
+
+  const fotos = document.querySelectorAll('.galeria__grid img');
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      botones.forEach(b => b.classList.remove('activo'));
+      boton.classList.add('activo');
+
+      const categoria = boton.dataset.filtro;
+
+      fotos.forEach(img => {
+        const coincide = categoria === 'todas' || img.dataset.categoria === categoria;
+        img.hidden = !coincide;
+      });
+    });
+  });
 
 })();
