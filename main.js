@@ -197,26 +197,36 @@ menu.querySelectorAll('a').forEach(enlace => {
    botón, se muestran solo las fotos de esa categoría (o todas, con el
    botón "Todas"). No hace falta tocar el visor: sigue funcionando
    igual, porque solo se oculta con CSS, las fotos siguen en el DOM.
+
+   Además, si la URL trae ?filtro=terraza (o cualquier otra categoría),
+   ese filtro se aplica nada más cargar la página. Así, un enlace del
+   tipo galeria.html?filtro=terraza abre la galería ya filtrada.
    ======================================================================= */
 (function () {
 
   const botones = document.querySelectorAll('.galeria__filtro');
-  if (!botones.length) return;
+  if (!botones.length) return;          // en páginas sin filtros, no hace nada
 
   const fotos = document.querySelectorAll('.galeria__grid img');
 
-  botones.forEach(boton => {
-    boton.addEventListener('click', () => {
-      botones.forEach(b => b.classList.remove('activo'));
-      boton.classList.add('activo');
+  function aplicarFiltro(categoria) {
+    botones.forEach(b => b.classList.toggle('activo', b.dataset.filtro === categoria));
 
-      const categoria = boton.dataset.filtro;
-
-      fotos.forEach(img => {
-        const coincide = categoria === 'todas' || img.dataset.categoria === categoria;
-        img.hidden = !coincide;
-      });
+    fotos.forEach(img => {
+      const coincide = categoria === 'todas' || img.dataset.categoria === categoria;
+      img.hidden = !coincide;
     });
+  }
+
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => aplicarFiltro(boton.dataset.filtro));
   });
+
+  const parametros = new URLSearchParams(window.location.search);
+  const filtroInicial = parametros.get('filtro');
+  const botonInicial = document.querySelector(`.galeria__filtro[data-filtro="${filtroInicial}"]`);
+  if (filtroInicial && botonInicial) {
+    aplicarFiltro(filtroInicial);
+  }
 
 })();

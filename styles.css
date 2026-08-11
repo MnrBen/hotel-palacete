@@ -956,10 +956,51 @@ body.sin-scroll {
 }
 
 /* -----------------------------------------------------------------------
+   TERRAZA
+   Texto breve + tres fotos a modo de escaparate. El resto de fotos
+   vive en la Galería (filtro "Terraza"), siguiendo el mismo patrón
+   que "cómo llegar": versión corta en portada, completa en su página.
+   ----------------------------------------------------------------------- */
+.terraza {
+  background: var(--piedra-osc);
+  padding: 48px 0 56px;
+}
+
+.terraza__titulo {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 14px 0 16px;
+  max-width: 24rem;
+}
+
+.terraza__texto {
+  color: var(--tinta-suave);
+  font-size: 1rem;
+  max-width: 34rem;
+  margin-bottom: 28px;
+}
+
+.terraza__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.terraza__grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--linea);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------------------
    UBICACIÓN
    ----------------------------------------------------------------------- */
 .ubicacion {
-  background: var(--piedra);
+  background: var(--piedra-osc);
   padding: 56px 0 64px;
 }
 
@@ -1083,7 +1124,7 @@ body.sin-scroll {
 
 /* --- Horarios --- */
 .horarios {
-  background: var(--piedra-osc);
+  background: var(--piedra);
   padding: 48px 0 56px;
 }
 
@@ -1223,6 +1264,15 @@ body.sin-scroll {
   display: none;
 }
 
+/* -----------------------------------------------------------------------
+   PLANES
+   Bloques de texto simples, sin foto. Reutiliza la tipografía de
+   .estancia__nombre y .estancia__texto ya definida en habitaciones.html.
+   ----------------------------------------------------------------------- */
+.plan {
+  margin-bottom: 28px;
+  max-width: 34rem;
+}
 
 
 
@@ -1565,6 +1615,19 @@ body.sin-scroll {
 
   .galeria__grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .terraza {
+    padding: 72px 0 88px;
+  }
+
+  .terraza__titulo {
+    font-size: 2.3rem;
+    max-width: 28rem;
+  }
+
+  .terraza__grid {
     gap: 14px;
   }
 }
