@@ -1274,6 +1274,53 @@ body.sin-scroll {
   max-width: 34rem;
 }
 
+/* -----------------------------------------------------------------------
+   PÁGINAS LEGALES (privacidad, cookies, aviso legal)
+   Texto denso: se prioriza la lectura, no el diseño. Ancho de línea
+   cómodo y jerarquía clara con encabezados, nada más.
+   ----------------------------------------------------------------------- */
+.legal {
+  background: var(--piedra);
+  padding: 48px 0 72px;
+}
+
+.legal__contenido {
+  max-width: 42rem;   /* ancho de lectura cómodo, no todo el contenedor */
+}
+
+.legal__contenido h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 32px 0 12px;
+  color: var(--tinta);
+}
+
+.legal__contenido h2:first-child {
+  margin-top: 0;
+}
+
+.legal__contenido p {
+  color: var(--tinta-suave);
+  font-size: 0.96rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.legal__contenido a {
+  color: var(--verde);
+  text-decoration: underline;
+}
+
+.legal__aviso {
+  background: var(--piedra-osc);
+  border-left: 2px solid var(--terracota);
+  padding: 14px 16px;
+  border-radius: 2px;
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+  margin-bottom: 32px;
+}
+
 
 
 /* !!!! MEDIA QUERIES !!!! */
@@ -1629,5 +1676,13 @@ body.sin-scroll {
 
   .terraza__grid {
     gap: 14px;
+  }
+
+  .legal {
+    padding: 72px 0 96px;
+  }
+
+  .legal__contenido h2 {
+    font-size: 1.35rem;
   }
 }
