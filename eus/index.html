@@ -58,7 +58,7 @@
       <!-- Botón de reserva y botón de menú -->
       <div class="cabecera__acciones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-reservar">Erreserbatu</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=es" class="boton-reservar">Erreserbatu</a>
 
         <button class="boton-menu" id="botonMenu" aria-expanded="false" aria-controls="menu" aria-label="Menua ireki">
           <span></span>
@@ -91,7 +91,7 @@
 
       <div class="hero__botones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-principal">Eskuragarritasuna ikusi</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=es" class="boton-principal">Eskuragarritasuna ikusi</a>
         <a href="habitaciones.html" class="boton-secundario">Logelak ikusi</a>
       </div>
 
@@ -284,24 +284,46 @@
     </div>
   </section>
 
-  <section class="terraza">
+    <!-- ===================================================================
+       DESAYUNOS
+       Tira horizontal deslizable, no un carrusel con flechas grandes ni
+       autoplay. En móvil cada foto ocupa el 70% de la pantalla, así se
+       ve un trozo de la siguiente asomando (indica que hay más sin
+       necesidad de texto ni icono). Reutiliza el visor a pantalla
+       completa vía la clase estancia__fotos, sin JS nuevo para eso.
+       =================================================================== -->
+
+       <section class="desayunos">
     <div class="contenedor">
-      <p class="etiqueta">Terraza</p>
-      <h2 class="terraza__titulo">Pintxoak, gosariak eta giro ona</h2>
-      <p class="terraza__texto">
-        Alde zaharraren erdian, Gipuzkoa plazara begira. Hondarribitik
-        pasatzen den edonorentzat irekita dago, hotelean lo egin ala ez.
+      <p class="etiqueta">Gosariak</p>
+      <h2 class="desayunos__titulo">Gosaldu Gipuzkoa plazan</h2>
+      <p class="desayunos__texto">
+        Produktu freskoak, gozogintza, 
+        zapore lokalak eta Palaceteren xarma goizero elkartzen dira, 
+        gosaria egonaldiaren une berezietako bat bihurtuz.
       </p>
 
-      <div class="terraza__grid estancia__fotos">
-        <img src="../fotos/terraza-01.jpg" alt="Hotel Palaceteren terraza, Gipuzkoa plazatik ikusita" loading="lazy">
-        <img src="../fotos/terraza-06.jpg" alt="Ardoa eta pintxoak Hotel Palaceteren terrazan" loading="lazy">
-        <img src="../fotos/terraza-03.jpg" alt="Hotel Palaceteko gosari barra" loading="lazy">
+      <div class="desayunos__tira estancia__fotos">
+        <img src="../fotos/desayuno-04.jpg" alt="Hotel Palaceteko gosari mahai osoa" loading="lazy">
+        <img src="../fotos/desayuno-03.jpg" alt="Izokin eta aguakate tosta Hotel Palaceten" loading="lazy">
+        <img src="../fotos/desayuno-10.jpg" alt="Hotel Palaceteko tosta" loading="lazy">
+        <img src="../fotos/desayuno-02.jpg" alt="Hotel Palaceteko gosariaren gozogintza barra" loading="lazy">
+        <img src="../fotos/desayuno-05.jpg" alt="Eztizko torrija Hotel Palaceten" loading="lazy">
+        <img src="../fotos/desayuno-01.jpg" alt="Hotel Palaceteko terrazako gosari mahaia" loading="lazy">
+        <img src="../fotos/desayuno-06.jpg" alt="Jogurta eta granola Hotel Palaceten" loading="lazy">
+        <img src="../fotos/desayuno-07.jpg" alt="Bistak dituen gosaria Hotel Palaceteko terrazan" loading="lazy">
+        <img src="../fotos/desayuno-08.jpg" alt="Eztizko kruasana Hotel Palaceten" loading="lazy">
+        <img src="../fotos/desayuno-09.jpg" alt="Izokin tosta Hotel Palaceten" loading="lazy">
       </div>
 
-      <p class="llegar__mas">
-        <a href="galeria.html?filtro=terraza">Terrazako argazki gehiago galerian</a>
-      </p>
+      <div class="desayunos__flechas">
+        <button class="desayunos__flecha desayunos__flecha--anterior" type="button" aria-label="Aurreko argazkiak ikusi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4L7 12l8 8"/></svg>
+        </button>
+        <button class="desayunos__flecha desayunos__flecha--siguiente" type="button" aria-label="Hurrengo argazkiak ikusi">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -372,7 +394,7 @@
         <a href="tel:+34943640813" class="ubicacion__telefono">943 64 08 13</a>
 
         <p class="ubicacion__aparcamiento">
-          Hotelak bi plaza doako ditu eraikinetik gertu, iristen den hurrenkeraren arabera eta erreserbatu ezin direla. Alde zaharraren gainerakoa auzoko bizilagunentzat bakarrik da, beraz onena da autoa inguruko doako aparkaleku batean uztea, oinez bost edo hamar minutura.
+          Hotelak bi plaza doako ditu eraikinetik gertu, iristen den hurrenkeraren arabera eta erreserbatu ezin direla. Alde zaharraren gainerakoa auzoko bizilagunentzat bakarrik da, beraz onena da autoa inguruko doako aparkaleku batean uztea, oinez bost edo hamar minutura. <br>Ez dugu igogailurik.
         </p>
 
         <p class="llegar__mas">

@@ -58,7 +58,7 @@
       <!-- Botón de reserva y botón de menú -->
       <div class="cabecera__acciones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-reservar">Book now</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=en" class="boton-reservar">Book now</a>
 
         <button class="boton-menu" id="botonMenu" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
           <span></span>
@@ -93,7 +93,7 @@
 
       <div class="hero__botones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-principal">Check availability</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=en" class="boton-principal">Check availability</a>
         <a href="habitaciones.html" class="boton-secundario">See our rooms</a>
       </div>
 
@@ -286,25 +286,45 @@
     </div>
   </section>
 
-  <section class="terraza">
+    <!-- ===================================================================
+       TERRAZA
+       Abierta a cualquiera, no solo a huéspedes: es donde más gente
+       nueva conoce el hotel, según la propia clienta. Tres fotos como
+       escaparate; el resto está en la Galería, filtro "Terraza".
+       =================================================================== -->
+
+  <section class="desayunos">
     <div class="contenedor">
-      <p class="etiqueta">The terrace</p>
-      <h2 class="terraza__titulo">Snacks, breakfast and good company</h2>
-      <p class="terraza__texto">
-        Right in the old town, overlooking Gipuzkoa square. Open to anyone
-        passing through Hondarribia, whether or not you're staying at the
-        hotel.
+      <p class="etiqueta">Breakfast</p>
+      <h2 class="desayunos__titulo">Breakfast on Gipuzkoa square</h2>
+      <p class="desayunos__texto">
+        Fresh produce, home-made pastries, local flavours
+         and the charm of the Palacete come together every morning,
+         turning breakfast into one of the special moments of your stay.
+
       </p>
 
-      <div class="terraza__grid estancia__fotos">
-        <img src="../fotos/terraza-01.jpg" alt="Terrace of Hotel Palacete, seen from Gipuzkoa square" loading="lazy">
-        <img src="../fotos/terraza-06.jpg" alt="Wine and snacks on the terrace of Hotel Palacete" loading="lazy">
-        <img src="../fotos/terraza-04.jpg" data-categoria="terraza" alt="Snack bar on the terrace" loading="lazy">
+      <div class="desayunos__tira estancia__fotos">
+        <img src="../fotos/desayuno-04.jpg" alt="Full breakfast table at Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-03.jpg" alt="Salmon and avocado toast at Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-10.jpg" alt="Toast of Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-02.jpg" alt="Pastry counter at Hotel Palacete's breakfast" loading="lazy">
+        <img src="../fotos/desayuno-05.jpg" alt="French toast with honey at Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-01.jpg" alt="Breakfast table on the terrace of Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-06.jpg" alt="Yoghurt with granola at Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-07.jpg" alt="Breakfast with a view on the terrace of Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-08.jpg" alt="Croissant with honey at Hotel Palacete" loading="lazy">
+        <img src="../fotos/desayuno-09.jpg" alt="Salmon toast at Hotel Palacete" loading="lazy">
       </div>
 
-      <p class="llegar__mas">
-        <a href="galeria.html?filtro=terraza">More terrace photos in the gallery</a>
-      </p>
+      <div class="desayunos__flechas">
+        <button class="desayunos__flecha desayunos__flecha--anterior" type="button" aria-label="See previous photos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4L7 12l8 8"/></svg>
+        </button>
+        <button class="desayunos__flecha desayunos__flecha--siguiente" type="button" aria-label="See more photos">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -376,7 +396,7 @@
         <a href="tel:+34943640813" class="ubicacion__telefono">943 64 08 13</a>
 
         <p class="ubicacion__aparcamiento">
-          The hotel has two free parking spaces near the building, on a first-come basis and without the option to book. The rest of the old town is reserved for local residents, so it's best to leave your car in one of the free car parks nearby, five to ten minutes on foot.
+          The hotel has two free parking spaces near the building, on a first-come basis and without the option to book. The rest of the old town is reserved for local residents, so it's best to leave your car in one of the free car parks nearby, five to ten minutes on foot. <br>We don't have an elevator.
         </p>
 
         <p class="llegar__mas">

@@ -230,3 +230,14 @@ menu.querySelectorAll('a').forEach(enlace => {
   }
 
 })();
+
+/* --- Flechas de la tira de desayunos (mueven la tira, no el visor) --- */
+(function () {
+  const tira = document.querySelector('.desayunos__tira');
+  if (!tira) return;
+  const anterior = document.querySelector('.desayunos__flecha--anterior');
+  const siguiente = document.querySelector('.desayunos__flecha--siguiente');
+  const paso = () => tira.querySelector('img').getBoundingClientRect().width + 10;
+  anterior.addEventListener('click', () => tira.scrollBy({ left: -paso(), behavior: 'smooth' }));
+  siguiente.addEventListener('click', () => tira.scrollBy({ left: paso(), behavior: 'smooth' }));
+})();

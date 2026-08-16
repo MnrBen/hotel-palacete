@@ -94,7 +94,7 @@
       <!-- Botón de reserva y botón de menú -->
       <div class="cabecera__acciones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-reservar">Reservar</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=es" class="boton-reservar">Reservar</a>
 
         <button class="boton-menu" id="botonMenu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
           <span></span>
@@ -133,7 +133,7 @@
 
       <div class="hero__botones">
         <!-- PENDIENTE: enlazar con el motor de reservas del hotel -->
-        <a href="https://booking.avirato.com/?code=32376257" class="boton-principal">Ver disponibilidad</a>
+        <a href="https://booking.avirato.com/?code=32376257&lang=es" class="boton-principal">Ver disponibilidad</a>
         <a href="habitaciones.html" class="boton-secundario">Ver habitaciones</a>
       </div>
 
@@ -322,29 +322,43 @@
   </section>
 
   <!-- ===================================================================
-       TERRAZA
-       Abierta a cualquiera, no solo a huéspedes: es donde más gente
-       nueva conoce el hotel, según la propia clienta. Tres fotos como
-       escaparate; el resto está en la Galería, filtro "Terraza".
+       DESAYUNOS
+       Tira horizontal deslizable, no un carrusel con flechas grandes ni
+       autoplay. En móvil cada foto ocupa el 70% de la pantalla, así se
+       ve un trozo de la siguiente asomando (indica que hay más sin
+       necesidad de texto ni icono). Reutiliza el visor a pantalla
+       completa vía la clase estancia__fotos, sin JS nuevo para eso.
        =================================================================== -->
-  <section class="terraza">
+  <section class="desayunos">
     <div class="contenedor">
-      <p class="etiqueta">La terraza</p>
-      <h2 class="terraza__titulo">Desayunos, raciones,  y buen ambiente</h2>
-      <p class="terraza__texto">
-        En pleno casco histórico, con vistas a la plaza de Gipuzkoa. Abierta
-        a cualquiera que pase por Hondarribia, te alojes o no en el hotel.
+      <p class="etiqueta">Desayunos</p>
+      <h2 class="desayunos__titulo"><strong>Desayuno en el Palacete</strong></h2>
+      <p class="desayunos__texto">
+        Productos frescos, repostería, sabores locales y el encanto del palacete se encuentran 
+        cada mañana para convertir el desayuno en uno de los momentos especiales de la estancia.
       </p>
 
-      <div class="terraza__grid estancia__fotos">
-        <img src="fotos/terraza-06.jpg" alt="Vino y raciones en la terraza del Hotel Palacete" loading="lazy">
-        <img src="fotos/terraza-01.jpg" alt="Terraza del Hotel Palacete desde la plaza de Gipuzkoa" loading="lazy">
-        <img src="fotos/terraza-04.jpg" data-categoria="terraza" alt="Barra de raciones de la terraza" loading="lazy">
+      <div class="desayunos__tira estancia__fotos">
+        <img src="fotos/desayuno-04.jpg" alt="Mesa completa de desayuno en el Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-03.jpg" alt="Tosta de salmón y aguacate del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-10.jpg" alt="Tosta de Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-02.jpg" alt="Barra de bollería del desayuno del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-05.jpg" alt="Brioche con mermelada del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-01.jpg" alt="Mesa de desayuno en la terraza del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-06.jpg" alt="Yogur con granola del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-07.jpg" alt="Desayuno con vistas en la terraza del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-08.jpg" alt="Cruasán con miel del Hotel Palacete" loading="lazy">
+        <img src="fotos/desayuno-09.jpg" alt="Tosta de salmón del Hotel Palacete" loading="lazy">
       </div>
 
-      <p class="llegar__mas">
-        <a href="galeria.html?filtro=terraza">Más fotos de la terraza en la galería</a>
-      </p>
+      <div class="desayunos__flechas">
+        <button class="desayunos__flecha desayunos__flecha--anterior" type="button" aria-label="Ver fotos anteriores">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 4L7 12l8 8"/></svg>
+        </button>
+        <button class="desayunos__flecha desayunos__flecha--siguiente" type="button" aria-label="Ver fotos siguientes">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4l8 8-8 8"/></svg>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -414,7 +428,7 @@
         <a href="tel:+34943640813" class="ubicacion__telefono">943 64 08 13</a>
         
         <p class="ubicacion__aparcamiento">
-          El hotel dispone de dos plazas gratuitas cerca del edificio, por orden de llegada y sin posibilidad de reserva. El resto del casco antiguo es solo para quienes viven en el barrio, por lo que conviene dejar el coche en cualquiera de los aparcamientos gratuitos de alrededor, a cinco o diez minutos andando.
+          El hotel dispone de dos plazas gratuitas cerca del edificio, por orden de llegada y sin posibilidad de reserva. El resto del casco antiguo es solo para quienes viven en el barrio, por lo que conviene dejar el coche en cualquiera de los aparcamientos gratuitos de alrededor, a cinco o diez minutos andando. <br>No tenemos ascensor.
         </p>
 
         <p class="llegar__mas">

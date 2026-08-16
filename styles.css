@@ -520,6 +520,7 @@ body.sin-scroll {
 .visor__hueco {
   flex: 0 0 100%;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -956,17 +957,18 @@ body.sin-scroll {
 }
 
 /* -----------------------------------------------------------------------
-   TERRAZA
-   Texto breve + tres fotos a modo de escaparate. El resto de fotos
-   vive en la Galería (filtro "Terraza"), siguiendo el mismo patrón
-   que "cómo llegar": versión corta en portada, completa en su página.
+   DESAYUNOS
+   Tira horizontal deslizable. Cada foto ocupa parte del ancho a
+   propósito: deja asomar la siguiente para indicar que se puede seguir
+   deslizando, sin necesidad de flechas en móvil.
    ----------------------------------------------------------------------- */
-.terraza {
+.desayunos {
   background: var(--piedra-osc);
   padding: 48px 0 56px;
+  position: relative;
 }
 
-.terraza__titulo {
+.desayunos__titulo {
   font-size: 1.7rem;
   font-weight: 400;
   line-height: 1.2;
@@ -974,26 +976,42 @@ body.sin-scroll {
   max-width: 24rem;
 }
 
-.terraza__texto {
+.desayunos__texto {
   color: var(--tinta-suave);
   font-size: 1rem;
   max-width: 34rem;
   margin-bottom: 28px;
 }
 
-.terraza__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+.desayunos__tira {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  /* Se sale del contenedor a ambos lados para que la primera y la
+     última foto no queden pegadas al borde del texto */
+  margin: 0 -20px;
+  padding: 0 20px 4px;
 }
 
-.terraza__grid img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+.desayunos__tira::-webkit-scrollbar {
+  display: none;
+}
+
+.desayunos__tira img {
+  flex: 0 0 auto;
+  width: 78%;              /* dejar asomar la siguiente en móvil */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--linea);
   border-radius: 2px;
+  scroll-snap-align: start;
   cursor: pointer;
+}
+
+.desayunos__flechas {
+  display: none;           /* solo aparecen en escritorio */
 }
 
 /* -----------------------------------------------------------------------
@@ -1665,19 +1683,60 @@ body.sin-scroll {
     gap: 14px;
   }
 
-  .terraza {
+  .desayunos {
     padding: 72px 0 88px;
   }
 
-  .terraza__titulo {
+  .desayunos__titulo {
     font-size: 2.3rem;
     max-width: 28rem;
   }
 
-  .terraza__grid {
-    gap: 14px;
+  .desayunos__tira {
+    margin: 0;
+    padding: 0;
   }
 
+  .desayunos__tira img {
+    width: 29%;             /* unas 3 y pico visibles, asoma la 4ª */
+  }
+
+  .desayunos__flechas {
+    display: block;
+  }
+
+  .desayunos__flecha {
+    position: absolute;
+    top: 58%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(27, 42, 34, 0.15);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+  }
+
+  .desayunos__flecha:hover {
+    background: rgba(27, 42, 34, 0.28);
+  }
+
+  .desayunos__flecha svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--tinta);
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .desayunos__flecha--anterior { left: 8px; }
+  .desayunos__flecha--siguiente { right: 8px; }
   .legal {
     padding: 72px 0 96px;
   }
