@@ -1,0 +1,71 @@
+# ================= ESPAÑOL =================
+Redirect 301 /fotos-hotel-fuenterrabia/                      https://hotelpalacete.net/galeria.html
+Redirect 301 /habitaciones/                                  https://hotelpalacete.net/habitaciones.html
+Redirect 301 /habitaciones/habitacion-individual/            https://hotelpalacete.net/habitaciones.html#individual
+Redirect 301 /habitaciones/habitacion-doble/                 https://hotelpalacete.net/habitaciones.html#doble
+Redirect 301 /habitaciones/habitacion-doble-con-vistas/      https://hotelpalacete.net/habitaciones.html#doble-vistas
+Redirect 301 /habitaciones/habitacion-triple/                https://hotelpalacete.net/habitaciones.html#triple
+Redirect 301 /servicios/                                     https://hotelpalacete.net/index.html
+Redirect 301 /reserva-habitacion-fuenterrabia/                https://booking.avirato.com/?code=32376257&lang=es
+Redirect 301 /contacta/                                       https://hotelpalacete.net/contacto.html
+Redirect 301 /politica-de-privacidad/                          https://hotelpalacete.net/privacidad.html
+Redirect 301 /politica-de-cookies/                             https://hotelpalacete.net/cookies.html
+
+# Blog abandonado, con relacion tematica -> Planes
+Redirect 301 /eventos-en-fuenterrabia/                         https://hotelpalacete.net/planes.html
+Redirect 301 /eventos-en-sansebastian/                          https://hotelpalacete.net/planes.html
+Redirect 301 /eventos-en-irun/                                  https://hotelpalacete.net/planes.html
+Redirect 301 /el-verano-y-las-fiestas/                          https://hotelpalacete.net/planes.html
+Redirect 301 /la-playa-de-hondarribia/                           https://hotelpalacete.net/planes.html
+Redirect 301 /pescadores-de-hondarribia/                         https://hotelpalacete.net/planes.html
+Redirect 301 /hotel-palacete/                                    https://hotelpalacete.net/index.html
+Redirect 301 /sin-categorizar/                                   https://hotelpalacete.net/index.html
+Redirect 301 /puente-de-diciembre-alojate-en-hotel-palacete/      https://hotelpalacete.net/index.html
+Redirect 301 /estrenamos-nueva-web-en-hotel-palacete/              https://hotelpalacete.net/index.html
+
+
+# ================= INGLES =================
+Redirect 301 /en/                                            https://hotelpalacete.net/eng/index.html
+Redirect 301 /en/photos-of-our-hotel-in-fuenterrabia/          https://hotelpalacete.net/eng/galeria.html
+Redirect 301 /en/bedrooms/                                     https://hotelpalacete.net/eng/habitaciones.html
+Redirect 301 /en/bedrooms/individual-rooms/                     https://hotelpalacete.net/eng/habitaciones.html#individual
+Redirect 301 /en/bedrooms/double-room/                          https://hotelpalacete.net/eng/habitaciones.html#doble
+Redirect 301 /en/bedrooms/double-room-with-views/                https://hotelpalacete.net/eng/habitaciones.html#doble-vistas
+Redirect 301 /en/bedrooms/triple-room/                           https://hotelpalacete.net/eng/habitaciones.html#triple
+Redirect 301 /en/services/                                       https://hotelpalacete.net/eng/index.html
+Redirect 301 /en/reservation/                                     https://booking.avirato.com/?code=32376257&lang=en
+Redirect 301 /en/contact/                                        https://hotelpalacete.net/eng/contacto.html
+Redirect 301 /en/privacy-policy/                                  https://hotelpalacete.net/privacidad.html
+
+
+# ================= FRANCES =================
+Redirect 301 /fr/                                             https://hotelpalacete.net/fr/index.html
+Redirect 301 /fr/photos-de-notre-hotel-a-fuenterrabia/          https://hotelpalacete.net/fr/galeria.html
+Redirect 301 /fr/les-chambres/                                   https://hotelpalacete.net/fr/habitaciones.html
+Redirect 301 /fr/les-chambres/chambres-simples/                   https://hotelpalacete.net/fr/habitaciones.html#individual
+Redirect 301 /fr/les-chambres/chambres-double/                    https://hotelpalacete.net/fr/habitaciones.html#doble
+Redirect 301 /fr/les-chambres/chambre-double-avec-vue/             https://hotelpalacete.net/fr/habitaciones.html#doble-vistas
+Redirect 301 /fr/les-chambres/chambre-triple/                      https://hotelpalacete.net/fr/habitaciones.html#triple
+Redirect 301 /fr/les-services/                                     https://hotelpalacete.net/fr/index.html
+Redirect 301 /fr/reservation/                                      https://booking.avirato.com/?code=32376257&lang=fr
+Redirect 301 /fr/contact/                                          https://hotelpalacete.net/fr/contacto.html
+Redirect 301 /fr/politique-de-confidentialite/                      https://hotelpalacete.net/privacidad.html
+Redirect 301 /fr/politique-de-cookies/                               https://hotelpalacete.net/cookies.html
+Redirect 301 /fr/estrenamos-nueva-web-en-hotel-palacete/              https://hotelpalacete.net/fr/index.html
+
+
+# ================= EUSKERA =================
+Redirect 301 /eu/                                              https://hotelpalacete.net/eus/index.html
+Redirect 301 /eu/gure-hoteleko-argazkiak-hondarribian/           https://hotelpalacete.net/eus/galeria.html
+Redirect 301 /eu/logelak/                                         https://hotelpalacete.net/eus/habitaciones.html
+Redirect 301 /eu/logelak/bakarreko-logelak/                        https://hotelpalacete.net/eus/habitaciones.html#individual
+Redirect 301 /eu/logelak/logela-bikoitza/                           https://hotelpalacete.net/eus/habitaciones.html#doble
+Redirect 301 /eu/logelak/gela-bikoitza-bistarekin/                   https://hotelpalacete.net/eus/habitaciones.html#doble-vistas
+Redirect 301 /eu/logelak/gela-hirukoitza/                            https://hotelpalacete.net/eus/habitaciones.html#triple
+Redirect 301 /eu/zerbitzuak/                                          https://hotelpalacete.net/eus/index.html
+Redirect 301 /eu/erreserbak/                                          https://booking.avirato.com/?code=32376257&lang=es
+Redirect 301 /eu/kontaktua/                                           https://hotelpalacete.net/eus/contacto.html
+Redirect 301 /eu/politique-de-confidentialite/                        https://hotelpalacete.net/privacidad.html
+Redirect 301 /eu/estrenamos-nueva-web-en-hotel-palacete/               https://hotelpalacete.net/eus/index.html
+Redirect 301 /eu/uncategorized-gabe/                                   https://hotelpalacete.net/eus/index.html
+
